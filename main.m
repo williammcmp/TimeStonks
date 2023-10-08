@@ -19,10 +19,12 @@ title('Time Series Data Column 1')
 
 subplot(4,1,2)
 autocorr(y, 10)
+ylim([-1,1])
 title('ACF')
 
 subplot(4,1,3)
 parcorr(y,10);
+ylim([-1,1])
 title('PACF')
 
 % gessing parameters - based on model
