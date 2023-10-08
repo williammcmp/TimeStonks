@@ -5,6 +5,10 @@ folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/C
 
 data = loadText('data/F12.txt', [1, 2, 3]);
 
+gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx");
+
+gold2008 = gold(year(gold.USDGold) == 2008, :);
+
 
 % Mean forecasting model with column 1
 y = data(:,1);
