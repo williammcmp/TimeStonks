@@ -1,4 +1,4 @@
-function goldPrices = loadExcel(fileName)
+function goldPrices = loadExcel(fileName, selectedYear)
     % Inputs:
     %   - fileName: The name of the Excel file to be read.
    
@@ -20,7 +20,10 @@ function goldPrices = loadExcel(fileName)
     opts = setvaropts(opts, ["Var1", "Var2", "Var3", "Var4"], "EmptyFieldRule", "auto");
     
     % Import the data
-    goldPrices = readtable(fileName, opts, "UseExcel", false);
+    allgoldPrices = readtable(fileName, opts, "UseExcel", false);
+
+    % Selects the specific year from the data
+    goldPrices = allgoldPrices(year(allgoldPrices.USDGold) == selectedYear, :);
     
     %% Clear temporary variables
     clear opts

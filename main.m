@@ -1,13 +1,16 @@
 clear; 
 close all;
 
+% Replace this with your relative path
 folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks'; % Change this for the laptop
 
+% Loads dta from text file
 data = loadText('data/F12.txt', [1, 2, 3]);
 
-gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx");
-
-gold2008 = gold(year(gold.USDGold) == 2008, :);
+% Loads data from excel file
+% Needs the absloute path to the excel file (avoids edge cases)
+year = 2008;
+gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx", year);
 
 
 % Mean forecasting model with column 1
