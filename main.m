@@ -1,7 +1,7 @@
 clear; 
 close all;
 
-folderPath = 'E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks'; % Change this for the laptop
+folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks'; % Change this for the laptop
 
 data = loadText('data/F12.txt', [1, 2, 3]);
 
