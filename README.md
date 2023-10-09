@@ -1,5 +1,11 @@
 # TimeStonks ⌛💰
 
+---
+## NOTE 
+**The specific data files for each person in MTH20016 has also been included, Simply change you file number in [main.m](/main.m)**
+
+---
+
 ## Overview
 
 This MATLAB project is designed to analyze and visualize time series data. It includes various functions and scripts for data import, statistical analysis, and visualization of different aspects of stochastic processes 📈📉
