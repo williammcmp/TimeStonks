@@ -6,11 +6,25 @@ folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/C
 
 % Loads dta from text file
 % Change this for you exact file number (all are included in the data folder)
-data = loadText('data/F12.txt', [1, 2, 3]);
+data = loadText('data/F12.txt', [1, 2, 3, 4]);
+
+% Unknown Process 1
+process1 = data(:,1);
+
+% Unknown Process 2
+process2 = data(:,2);
+
+% Unknown Process 3
+process3 = data(:,3);
+
+% known MA(1) Process
+MA1process = data(:,4);
+
+% The year of gold that you have been assigned
+year = 2008;
 
 % Loads data from excel file
 % Needs the absloute path to the excel file (avoids edge cases)
-year = 2008;
 gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx", year);
 
 
@@ -35,22 +49,22 @@ parcorr(y,10);
 ylim([-1,1])
 title('PACF')
 
-% gessing parameters - based on model
+% gessing parameters - based on model (will create seperate function for this)
 mu=mean(y);
 
-% finidng residuals - based on model
+% finidng residuals - based on model (will create seperate function for this)
 e = y-mu;
 
-% validation of model
-m = round(log(length(y)));
+% getting a approiate number of Lags, round to the neaiest interger
+m = round(log(length(y))); 
 
-% Running the Tests
+% validation of model viw the tests
 [h, plbq] = lbqtest(e, "Lags", m , "DOF", m-1); % test for white-noice of residuals
 [h, psw] = swtest(e); % test for normality of residuals
 [h, ptt] = ttest2(e,0); % test for residual mean not different from 0
 
 
-% Forecasting
+% Forecasting - based mean model (will create seperate function for this)
 p=10;
 yf=zeros(p,1);
 err=zeros(p,1);
