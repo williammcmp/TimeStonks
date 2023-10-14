@@ -1,5 +1,20 @@
 function naiveModel (data, figureTitle)
-    % may decide to use the naive model if the ACF of the raw data is significantly non-zero for large lags
+    % naiveModel - Fits and validates a naive model to the provided data.
+    %
+    % This function fits a naive model to the input time series data. The naive
+    % model forecasts each step as equal to the previous value. It also calculates
+    % residuals, constructs prediction intervals, and performs validation tests
+    % to assess the quality of the model.
+    %
+    % Syntax:
+    %   naiveModel(data, figureTitle)
+    %
+    % Inputs:
+    %   data - The time series data to which the naive model will be applied.
+    %   figureTitle - The title for the figure and plots.
+    %
+    % Example:
+    %   naiveModel(data, 'Column 2 Data')
     
     % naive model forecasting
     n = length(data);
