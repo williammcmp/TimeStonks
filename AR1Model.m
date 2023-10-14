@@ -1,4 +1,19 @@
 function AR1Model (data, figureTitle)
+    % AR1Model - Fits and validates an AR(1) model to the provided data.
+    %
+    % This function fits an AR(1) model to the input time series data, performs
+    % parameter estimation, calculates residuals, constructs prediction intervals,
+    % and conducts validation tests to assess the quality of the model.
+    %
+    % Syntax:
+    %   AR1Model(data, figureTitle)
+    %
+    % Inputs:
+    %   data - The time series data to which the AR(1) model will be applied.
+    %   figureTitle - The title for the figure and plots.
+    %
+    % Example:
+    %   AR1Model(data, 'Column 3 Data')
 
     % AR(1) model forecasting
     n = length(data);
