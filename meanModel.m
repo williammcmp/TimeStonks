@@ -113,5 +113,19 @@ function meanModel (data, figureTitle)
         disp("Two Sided test p-value = " + p + " - residual mean is significantly different from zero")
     end 
 
+    % plotting the ACF and histogram of the residuals (not needed for assignment)
+    m=floor(log(n));
+    fig = figure
+    set(fig, 'Name', "Histogram and ACF of residuals from Mean Forecast of " + figureTitle);
+    subplot(2,1,1)
+    autocorr(e,m)
+    subplot(2,1,2)
+    h = histogram(e);
+    hold on
+    h.Normalization = 'pdf';
+    xx=-5:0.01:5;
+    yy=pdf('Normal',xx,mean(e),std(e));
+    plot(xx,yy)
+    title('Histogram of residuals')
 
 end
