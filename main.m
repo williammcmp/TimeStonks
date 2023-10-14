@@ -29,10 +29,10 @@ gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne U
 
 
 % Plots each of the colums of data to establish what process to model with - random walk, or an AR(1), or a white noise process (?)
-% initalPlots(process1, "Column 1 Time Series Data") % white noise
-% initalPlots(process2, "Column 2 Time Series Data") % random walk, or an AR(1), or a white noise process (?)
-% initalPlots(process3, "Column 3 Time Series Data") % random walk, or an AR(1), or a white noise process (?)
-% initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process") % known to be a MA(1) process
+initalPlots(process1, "Column 1 Time Series Data") % white noise
+initalPlots(process2, "Column 2 Time Series Data") % random walk
+initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
+initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process") % known to be a MA(1) process
 
 % --- What process to use??? ---
 % white noise   ->  mean  model
