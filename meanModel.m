@@ -75,31 +75,28 @@ function meanModel (data, figureTitle)
     % Ljung-Box test
     [h,p] = lbqtest(e, 'Lags', m, 'DOF', m-1 ); % 1 parameter was estimated (mu)
 
-    disp ("Ljung-Box test p-value = " + p)
     if p > 0.05
-        disp("The residuals from fitting the Mean Model to " + figureTitle + " is not significantly different from a white noise process")
+        disp("Ljung-Box test p-value = " + p + " - residuals are not significantly different from a white noise process")
     else
-        disp("The residuals from fitting the Mean Model to " + figureTitle + " is significantly different from a white noise process")
+        disp("Ljung-Box test p-value = " + p + " - residuals are significantly different from a white noise process")
     end 
 
     % Shapiro-Wilk test
     [h,p] = swtest(e);
 
-    disp ("Shapiro-Wilk test p-value = " + p)
     if p > 0.05
-        disp("The distribution of the residuals from fitting the Mean Model to " + figureTitle + " is not significantly different from normal.")
+        disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are not significantly different from normal.")
     else
-        disp("The distribution of the residuals from fitting the Mean Model to " + figureTitle + " is significantly different from normal")
+        disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are significantly different from normal")
     end 
 
     % Two Sided test
     p = 2 * (1 - cdf('T', abs(mean(e) * sqrt(n) / std(e)), length(e)-1) ); % df = n - 1
 
-    disp ("Two Sided test p-value = " + p)
     if p > 0.05
-        disp("The mean of the residuals from fitting the Mean Model to " + figureTitle + " is not significantly different from zero")
+        disp("Two Sided test p-value = " + p + " - residual mean is not significantly different from zero")
     else
-        disp("The mean of the residuals from fitting the Mean Model to " + figureTitle + " is significantly different from zero")
+        disp("Two Sided test p-value = " + p + " - residual mean is significantly different from zero")
     end 
 
 
