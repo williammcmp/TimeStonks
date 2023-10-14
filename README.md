@@ -4,6 +4,8 @@
 ## NOTE 
 **The specific data files for each person in MTH20016 has also been included, Simply change you file number in [main.m](/main.m)**
 
+## CURRENT PROGRESS
+**Part 1 has been completed, working on parts 2 and 3.**
 ---
 
 ## Overview
