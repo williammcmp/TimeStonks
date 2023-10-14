@@ -1,5 +1,19 @@
 function meanModel (data, figureTitle)
-    % calcuated mean model to the provided data
+    % meanModel - Calculates and visualizes a mean model for the provided data.
+    %
+    % This function calculates the mean model for the input data, including
+    % forecasting, residuals, and the construction of 95% prediction intervals.
+    % It also performs validation tests to assess the quality of the model.
+    %
+    % Syntax:
+    %   meanModel(data, figureTitle)
+    %
+    % Inputs:
+    %   data - The time series data to which the mean model will be applied.
+    %   figureTitle - The title for the figure and plots.
+    %
+    % Example:
+    %   meanModel(data, 'Column 1 Data')
 
     % mean model forecasting
     n = length(data);
