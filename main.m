@@ -28,8 +28,15 @@ year = 2008;
 gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks\data\Historic-Gold-Prices.xlsx", year);
 
 
-% Plot each of the colums of data to establish what process to model with
-initalPlots(process1, "Column 1 Time Series Data")
-initalPlots(process2, "Column 2 Time Series Data")
-initalPlots(process3, "Column 3 Time Series Data")
-initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process")
+% Plots each of the colums of data to establish what process to model with
+initalPlots(process1, "Column 1 Time Series Data") % random walk, or an AR(1), or a white noise process
+initalPlots(process2, "Column 2 Time Series Data") % random walk, or an AR(1), or a white noise process
+initalPlots(process3, "Column 3 Time Series Data") % random walk, or an AR(1), or a white noise process
+initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process") % known to be a MA(1) process
+
+% --- What process to use??? ---
+% white noise   ->  mean  model
+% Random Walk   ->  naive model
+% AR(1)         ->  AR(1) mdoel
+% ---                        ---
+
