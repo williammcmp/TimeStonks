@@ -54,7 +54,7 @@ function meanModel (data, figureTitle)
 
     % Plot the time series, fitted, forecast values, 95% prediction intervals for 20 steps ahead.
     fig = figure;
-    set(fig, 'Name', figureTitle, 'Position', [10, 10, 1100, 900]);
+    set(fig, 'Name', " Mean Forecast of " + figureTitle, 'Position', [10, 10, 1100, 900]);
 
     % Time series data
     h1 = plot(data); 
@@ -71,7 +71,7 @@ function meanModel (data, figureTitle)
     plot(n + 1:n + p, data_forecast - err,'r:', 'LineWidth', 2); % Lower error bound
 
 
-    legend([h1 h2 h3 h4],figureTitle, 'Fitted', 'Forecast', '95% CI', 'Location', 'NorthWest');
+    legend([h1 h2 h3 h4],figureTitle, 'Fitted', 'Forecast - 20 steps ahead', '95% CI', 'Location', 'NorthWest');
     title(['Fitted mean model to ' + figureTitle])
 
     % Validation of the model
