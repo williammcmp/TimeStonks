@@ -35,7 +35,7 @@ function naiveModel (data, figureTitle)
         data_fitted(i) = data(i-1); % Calcuating fitted values
     end
 
-    % Constructing the 95% prediction intervals for 20 steps ahead - sigma is unknown    
+    % Constructing the 95% prediction intervals for 20 steps ahead  
     p = 20; % steps ahead
     data_forecast = zeros(p, 1); % predicited values
     err = zeros(p, 1); % upper bound error
@@ -43,7 +43,7 @@ function naiveModel (data, figureTitle)
     % Calculate the standard deviation of residuals
     s = std(e); 
 
-    % loop over each step ahead - not needed for this model (Forecasted values are constant)
+    % loop over each step ahead - not needed for this model
     for i = 1:p
          data_forecast(i) = data(n); % calculating forecast values
          err(i) = 1.96*s*sqrt(i); % calculating upper error bound

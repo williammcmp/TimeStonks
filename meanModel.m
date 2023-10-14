@@ -18,8 +18,8 @@ function meanModel (data, figureTitle)
     % mean model forecasting
     n = length(data);
 
-    % Estimate the parameters
-    mu = mean(data);
+    % Estimate the parameters - 1 parm
+    mu = mean(data); % average
 
     % Calculating Residuals
     e = zeros(n,1); % Residuals
@@ -32,7 +32,7 @@ function meanModel (data, figureTitle)
     data_fitted = zeros(n, 1); % Fitted values 
 
     for i = 1:n
-        data_fitted(i) = mu; % Calcuating fitted values
+        data_fitted(i) = mu; % Calculating fitted values
     end
 
     % Constructing the 95% prediction intervals for 20 steps ahead - sigma is unknown    
