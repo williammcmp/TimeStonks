@@ -104,7 +104,7 @@ function meanModel (data, figureTitle)
         disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are significantly different from normal")
     end 
 
-    % Two Sided test
+    % Two Sided test - using student T 
     p = 2 * (1 - cdf('T', abs(mean(e) * sqrt(n) / std(e)), length(e)-1) ); % df = n - 1
 
     if p > 0.05
