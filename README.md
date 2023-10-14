@@ -5,7 +5,8 @@
 **The specific data files for each person in MTH20016 has also been included, Simply change you file number in [main.m](/main.m)**
 
 ## CURRENT PROGRESS
-**Part 1 has been completed, working on parts 2 and 3.**
+**Part 1 has been completed, working on parts 2 and 3. Checkout [main.m](/main.m)**
+
 ---
 
 ## Overview
@@ -38,7 +39,28 @@ This MATLAB project is designed to analyze and visualize time series data. It in
 
 3. Run the script in MATLAB to execute the desired analysis and generate visualizations.
 
+## Important files
+
+- [main.m](/main.m) - Main Script (run everything from here)
+
+Forecasting scripts 📈📉 - Taken from the Labs (nothing crazing is happening) 
+- [AR1Model.m](/AR1Model.m) - AR(1) Model Fit and Forecast script
+- [meanModel.m](/meanModel.m) - Mean Model Fit and Forecast script
+- [naiveModel.m](/naiveModel.m) - Naive Model Fit and Forecast script
+- [MA1Model.m](/MA1Model.m) - MA(1) Script (WIP)
+
+Folders 📁
+- [data/](/data/) (Directory of all Data Files required for Assigment)
+
+Helper Functions ⚒ (plots and loading data)
+- [initalPlots.m](/initalPlots.m) - Plots the Raw data's ACF and PACF
+- [loadExcel.m](/loadExcel.m) - Excel Data Loading Function
+- [loadText.m](/loadText.m) - Text Data Loading Function
+- [swtest.m](/swtest.m) - Shapiro-Wilk Test Function (saves you having to download it again)
+
 ## Git Installation Guide
+
+**This whole part should be skipped if you download the .zip version of this. Click on the Green code button near the top of the screen.** 
 
 ### Introduction
 

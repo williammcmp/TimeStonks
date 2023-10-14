@@ -1,3 +1,6 @@
+%  ------   Setup   ------
+%    Loading data files
+%  ------------------------
 clear; 
 close all;
 
@@ -27,10 +30,10 @@ year = 2008;
 % Needs the absloute path to the excel file (avoids edge cases - sorry)
 gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks\data\Historic-Gold-Prices.xlsx", year);
 
+
 %  ------   Part 1   ------
 %  Guess and fit the process
 %  ------------------------
-
 
 % Plots each of the colums of data to establish what process to model with - random walk, or an AR(1), or a white noise process (?)
 initalPlots(process1, "Column 1 Time Series Data") % white noise
@@ -50,8 +53,7 @@ naiveModel(process2, "Column 2 Data")
 AR1Model(process3, "Column 3 Data")
 
 
-
-%  ------   Part 1   ------
+%  ------   Part 2   ------
 %    Fit the MA(1) model
 %  ------------------------
 
