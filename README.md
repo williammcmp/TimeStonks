@@ -2,7 +2,7 @@
 
 ---
 ## NOTE 
-**The specific data files for each person in MTH20016 has also been included, Simply change you file number in [main.m](/main.m)**
+**The specific data files for each person in MTH20016 (S2 2023) has also been included, Simply change you file number in [main.m](/main.m)**
 
 ## CURRENT PROGRESS
 **Part 1 has been completed, working on parts 2 and 3. Checkout [main.m](/main.m)**
@@ -43,7 +43,8 @@ This MATLAB project is designed to analyze and visualize time series data. It in
 
 - [main.m](/main.m) - Main Script (run everything from here)
 
-Forecasting scripts 📈📉 - Taken from the Labs (nothing crazing is happening) 
+Forecasting scripts 📈📉 - Taken from the Labs (nothing crazing is happening). Each forecast model function or script will include a 🧪 validation output to the command window. 😎
+
 - [AR1Model.m](/AR1Model.m) - AR(1) Model Fit and Forecast script
 - [meanModel.m](/meanModel.m) - Mean Model Fit and Forecast script
 - [naiveModel.m](/naiveModel.m) - Naive Model Fit and Forecast script
@@ -136,3 +137,5 @@ Contributions to this project are welcome. Feel free to open issues, suggest imp
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
+
+If you are reading this far down a repo that doesent even matter, WTF?!??!. Thanks I guess. 

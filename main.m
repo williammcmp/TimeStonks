@@ -46,6 +46,9 @@ initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
 % AR(1)         ->  AR(1) mdoel
 % ---                        ---
 
+% Each model function/script will output the validating tests allowing 
+% you to know if the model is appropiate for use with the provided time-series.
+
 meanModel(process1, "Column 1 Data")
 
 naiveModel(process2, "Column 2 Data")
