@@ -5,7 +5,7 @@
 **The specific data files for each person in MTH20016 (S2 2023) has also been included, Simply change you file number in [main.m](/main.m)**
 
 ## CURRENT PROGRESS
-**Part 1 has been completed, working on parts 2 and 3. Checkout [main.m](/main.m)**
+**Parts 1 and 2 are been complete, working on part 3. Checkout [main.m](/main.m)**
 
 ---
 
