@@ -85,9 +85,9 @@ function naiveModel (data, figureTitle)
     [h,p] = lbqtest(e, 'Lags', m, 'DOF', m); % 0 parameters were estimated
 
     if p > 0.05
-        disp("Ljung-Box test p-value = " + p + " - residuals are not significantly different from a white noise process")
+        disp("Ljung-Box test p-value = " + p + " - ACF of the residuals is NOT significantly different from the ACF of a white noise process")
     else
-        disp("Ljung-Box test p-value = " + p + " - residuals are significantly different from a white noise process")
+        disp("Ljung-Box test p-value = " + p + " - ACF of the residuals IS significantly different from the ACF of a white noise process")
     end 
 
     % Shapiro-Wilk test
