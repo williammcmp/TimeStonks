@@ -5,7 +5,8 @@ clear;
 close all;
 
 % Replace this with your relative path
-folderPath = 'E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks'; 
+% folderPath = 'E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks'; % PC plath
+folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks' % latop path
 
 % Loads dta from text file
 % Change this for you exact file number (all are included in the data folder)
@@ -28,7 +29,9 @@ year = 2008;
 
 % Loads data from excel file
 % Needs the absloute path to the excel file (avoids edge cases - sorry)
-gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks\data\Historic-Gold-Prices.xlsx", year);
+% gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks\data\Historic-Gold-Prices.xlsx", year); % PC path
+gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx", year); % laptop path
+
 
 
 %  ------   Part 1   ------
