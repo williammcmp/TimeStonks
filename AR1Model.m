@@ -25,8 +25,8 @@ function AR1Model (data, figureTitle)
     h = autocorr(data);
     a = h(2); % coefficent - a
 
-     % Calculating Residuals
-     e = zeros(n,1); % Residuals
+    % Calculating Residuals
+    e = zeros(n,1); % Residuals
 
     for i = 2:n % e(1) = 0
         e(i) = data(i) - mu - a * (data(i-1) - mu); % observed - fitted
@@ -50,7 +50,7 @@ function AR1Model (data, figureTitle)
     % Calculate the standard deviation of residuals
     s = std(e); 
 
-    % loop over each step ahead - not needed for this model
+    % loop over each step ahead
     for i=1:p
         lower(i) = mu + a^i * (data(n) - mu) - 1.96 * s * sqrt((1 - a^(2 * i)) / (1 - a^2));
         upper(i)= mu + a^i * (data(n) - mu) + 1.96 * s * sqrt((1 - a^(2 * i)) / (1 - a^2));
@@ -104,9 +104,9 @@ function AR1Model (data, figureTitle)
     [h,p] = swtest(e);
 
     if p > 0.05
-        disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are not significantly different from normal.")
+        disp("Shapiro-Wilk test p-value = " + p + " - distribution of residuals are not significantly different from normal.")
     else
-        disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are significantly different from normal")
+        disp("Shapiro-Wilk test p-value = " + p + " - distribution of residuals are significantly different from normal")
     end 
 
     % Two Sided test - using student T 

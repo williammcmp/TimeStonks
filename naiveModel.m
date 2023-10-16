@@ -94,9 +94,9 @@ function naiveModel (data, figureTitle)
     [h,p] = swtest(e);
 
     if p > 0.05
-        disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are not significantly different from normal.")
+        disp("Shapiro-Wilk test p-value = " + p + " - distribution ofresiduals are not significantly different from normal.")
     else
-        disp("Shapiro-Wilk test p-value = " + p + " - distribution residuals are significantly different from normal")
+        disp("Shapiro-Wilk test p-value = " + p + " - distribution of residuals are significantly different from normal")
     end 
 
     % Two Sided test - using student T
