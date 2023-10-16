@@ -32,6 +32,14 @@ function MA1Model (data, figureTitle)
     mu = mean(data); % average (contant C in model)
     a = bestGuessA(data); % use conditional least squares to find a
 
+    % Using ARIMA functions to check if the Best guess method worked
+    Mdl = arima('Constant',NaN,'MALags',1,'D',0);
+    fit = estimate(Mdl, data);
+
+    disp("Guessed Vs Estimated (ARIMA fun): ")
+    disp("Guessed mu =  " + mu + " Expected mu = " + fit.Constant)
+    disp("Guessed a = " + a + " Expected a = " + fit.MA{1})
+
     % Calculating Residuals
     e = zeros(n,1); % Residuals
 
@@ -154,9 +162,9 @@ function bestA = bestGuessA(data)
         a = aRange(j);
         e = zeros(n, 1); % an empty array for the residuals
         for i = 2:length(data)
-            e(i) = (data(i) - (mu + a * e(i - 1)))^2; % calcuate the residual ^ 2
+            e(i) = (data(i) - mu - a * e(i - 1)); % calcuate the residual
         end
-        eSum(j) = sum(e); % sum the residuals^2
+        eSum(j) = sum(pow2(e)); % sum the residuals^2
     end
 
     [eMin, index] = min(eSum); % find the min of the S(a)
@@ -173,4 +181,5 @@ function bestA = bestGuessA(data)
     xlabel("a")
     ylabel("S(a)=\Sigma e^2")
     title(["Estimating a for MA(1) processe"]);
+    ylim([240, 350])
 end

@@ -60,5 +60,6 @@ AR1Model(process3, "Column 3 Data")
 %    Fit the MA(1) model
 %  ------------------------
 
-initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process") % known to be a MA(1) process
+% initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process") % known to be a MA(1) process
 MA1Model(MA1process, "Column 4 Data"); % Will also plot the S(a) vs a to estimate params
+
