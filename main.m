@@ -39,9 +39,9 @@ gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversi
 %  ------------------------
 
 % Plots each of the colums of data to establish what process to model with - random walk, or an AR(1), or a white noise process (?)
-initalPlots(process1, "Column 1 Time Series Data") % white noise
-initalPlots(process2, "Column 2 Time Series Data") % random walk
-initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
+% initalPlots(process1, "Column 1 Time Series Data") % white noise
+% initalPlots(process2, "Column 2 Time Series Data") % random walk
+% initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
 
 % --- What process to use??? ---
 % white noise   ->  mean  model
@@ -52,11 +52,11 @@ initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
 % Each model function/script will output the validating tests allowing 
 % you to know if the model is appropiate for use with the provided time-series.
 
-meanModel(process1, "Column 1 Data")
+% meanModel(process1, "Column 1 Data")
 
-naiveModel(process2, "Column 2 Data")
+% naiveModel(process2, "Column 2 Data")
 
-AR1Model(process3, "Column 3 Data")
+% AR1Model(process3, "Column 3 Data")
 
 
 %  ------   Part 2   ------
@@ -64,5 +64,30 @@ AR1Model(process3, "Column 3 Data")
 %  ------------------------
 
 % initalPlots(MA1process, "Column 4 - Time Series Data - MA(1) process") % known to be a MA(1) process
-MA1Model(MA1process, "Column 4 Data"); % Will also plot the S(a) vs a to estimate params
+% MA1Model(MA1process, "Column 4 Data"); % Will also plot the S(a) vs a to estimate params
+
+
+
+%  ------   Part 3   ------
+%         Gold Stonks
+%  ------------------------
+
+% Take the data for the first 100 days in the specified year and find an optimal ARIMA model. 
+% Use the model to predict the price of gold for the next 20 days. 
+% Compare your prediction with the actual data.
+
+gold100 = gold.Price(1:100); % the first 100 days of gold prices
+
+% initalPlots(gold100, "Price of Gold in 2008 - AUD (first 100 days)")
+
+
+
+
+
+
+
+
+
+
+
 
