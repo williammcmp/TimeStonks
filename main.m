@@ -79,7 +79,7 @@ gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversi
 gold100 = gold.Price(1:100); % the first 100 days of gold prices
 
 % initalPlots(gold100, "Price of Gold in 2008 - AUD (first 100 days)")
-
+ARIMAModel(gold.Price, "2008 daily Gold Price")
 
 
 
