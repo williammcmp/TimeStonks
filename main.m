@@ -5,8 +5,8 @@ clear;
 close all;
 
 % Replace this with your relative path
-% folderPath = 'E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks'; % PC plath
-folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks' % latop path
+folderPath = 'E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks'; % PC plath
+% folderPath = '/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks' % latop path
 
 % Loads dta from text file
 % Change this for you exact file number (all are included in the data folder)
@@ -29,8 +29,8 @@ year = 2008;
 
 % Loads data from excel file
 % Needs the absloute path to the excel file (avoids edge cases - sorry)
-% gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks\data\Historic-Gold-Prices.xlsx", year); % PC path
-gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx", year); % laptop path
+gold = loadExcel("E:\Users\William\Uni\Swinburne OneDrive\OneDrive - Swinburne University\Classes\2023 S2\MTH20016\Assigment shit\Second Assigment - Stonks\TimeStonks\data\Historic-Gold-Prices.xlsx", year); % PC path
+% gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversity/Classes/2023 S2/MTH20016/Assigment shit/Second Assigment - Stonks/TimeStonks/data/Historic-Gold-Prices.xlsx", year); % laptop path
 
 
 
@@ -41,7 +41,7 @@ gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversi
 % Plots each of the colums of data to establish what process to model with - random walk, or an AR(1), or a white noise process (?)
 % initalPlots(process1, "Column 1 Time Series Data") % white noise
 % initalPlots(process2, "Column 2 Time Series Data") % random walk
-% initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
+initalPlots(process3, "Column 3 Time Series Data") % AR(1) process
 
 % --- What process to use??? ---
 % white noise   ->  mean  model
@@ -56,7 +56,7 @@ gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversi
 
 % naiveModel(process2, "Column 2 Data")
 
-% AR1Model(process3, "Column 3 Data")
+AR1Model(process3, "Column 3 Data")
 
 
 %  ------   Part 2   ------
@@ -79,7 +79,7 @@ gold = loadExcel("/Users/william/Library/CloudStorage/OneDrive-SwinburneUniversi
 gold100 = gold.Price(1:100); % the first 100 days of gold prices
 
 % initalPlots(gold100, "Price of Gold in 2008 - AUD (first 100 days)")
-ARIMAModel(gold.Price, "2008 daily Gold Price")
+% ARIMAModel(gold.Price, "2008 daily Gold Price")
 
 
 

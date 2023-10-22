@@ -92,7 +92,7 @@ function AR1Model (data, figureTitle)
     disp("Validation of the AR(1) model to " + figureTitle)
 
     % Ljung-Box test
-    [h,p] = lbqtest(e, 'Lags', m, 'DOF', m-1 ); % 1 parameter was estimated (mu)
+    [h,p] = lbqtest(e, 'Lags', m, 'DOF', m-2 ); % 2 parameter was estimated (mu)
 
     if p > 0.05
         disp("Ljung-Box test p-value = " + p + " - ACF of the residuals is NOT significantly different from the ACF of a white noise process")

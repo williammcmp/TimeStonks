@@ -15,11 +15,13 @@ function meanModel (data, figureTitle)
     % Example:
     %   meanModel(data, 'Column 1 Data')
 
-    % mean model forecasting
-    n = length(data);
-
+    
     % Estimate the parameters - 1 parm
     mu = mean(data); % average
+    disp(mu)
+    
+    % mean model forecasting
+    n = length(data);
 
     % Calculating Residuals
     e = zeros(n,1); % Residuals
@@ -76,16 +78,17 @@ function meanModel (data, figureTitle)
 
     % Validation of the model
 
-    m = round(log(n)); % lags of the dataset
-
+    
     %  --- Validating Tests ---
     % Ljung-Box test    - ACF of residuals is simular to the ACF of a white noise process up-to lag m
     % Shapiro-Wilk test - Normality of the residuals
     % Two Sided test    - Mean of the residuals is significantly different from zero.
     %  ---                   ---
-
+    
     disp("Validation of the Mean model to " + figureTitle)
 
+    m = round(log(n)); % lags of the dataset
+    
     % Ljung-Box test
     [h,p] = lbqtest(e, 'Lags', m, 'DOF', m-1 ); % 1 parameter was estimated (mu)
 

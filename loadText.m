@@ -9,8 +9,9 @@ function extractedData = loadText(fileName, columnNumbers)
     end
     
     % Read the data from the text file
-    data = importdata(fileName); % Use 'readtable' if your data is in a table format
+    data = importdata(fileName); % Use 'readtable' if your data is in a table formate
     
     % Extract the specified columns
     extractedData = data(:, columnNumbers);
 end
+

@@ -2,8 +2,7 @@ function goldPrices = loadExcel(fileName, selectedYear)
     % Inputs:
     %   - fileName: The name of the Excel file to be read.
    
-
-    %% Set up the Import Options and import the data
+    % Set up the Import Options and import the data
     opts = spreadsheetImportOptions("NumVariables", 6);
     
     % Specify sheet and range
@@ -25,7 +24,7 @@ function goldPrices = loadExcel(fileName, selectedYear)
     % Selects the specific year from the data
     goldPrices = allgoldPrices(year(allgoldPrices.USDGold) == selectedYear, :);
     
-    %% Clear temporary variables
+    % Clear temporary variables
     clear opts
 
 end

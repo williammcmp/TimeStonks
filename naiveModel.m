@@ -26,7 +26,7 @@ function naiveModel (data, figureTitle)
         e(i) = data(i) - data(i - 1); % e(i) = x_i - x_(i-1)
     end
 
-    % Calculting the fitted vales
+    % Calculating the fitted vales
     data_fitted = zeros(n, 1); % Fitted values 
 
     data_fitted(1) = data(1); % special case for the first fitted value
@@ -43,7 +43,7 @@ function naiveModel (data, figureTitle)
     % Calculate the standard deviation of residuals
     s = std(e); 
 
-    % loop over each step ahead - not needed for this model
+    % loop over each step ahead
     for i = 1:p
          data_forecast(i) = data(n); % calculating forecast values
          err(i) = 1.96*s*sqrt(i); % calculating upper error bound
