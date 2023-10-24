@@ -5,7 +5,8 @@
 **The specific data files for each person in MTH20016 (S2 2023) has also been included, Simply change you file number in [main.m](/main.m)**
 
 ## CURRENT PROGRESS
-**Parts 1 and 2 are been complete, working on part 3. Checkout [main.m](/main.m)**
+
+All components of the assignment are completed and fully ready for use.
 
 ---
 
@@ -48,7 +49,8 @@ Forecasting scripts 📈📉 - Taken from the Labs (nothing crazing is happening
 - [AR1Model.m](/AR1Model.m) - AR(1) Model Fit and Forecast script
 - [meanModel.m](/meanModel.m) - Mean Model Fit and Forecast script
 - [naiveModel.m](/naiveModel.m) - Naive Model Fit and Forecast script
-- [MA1Model.m](/MA1Model.m) - MA(1) Script (WIP)
+- [MA1Model.m](/MA1Model.m) - MA(1) Script that used the method of conditional least squares to find the best value for a.
+- [ARIMAModel.m](/ARIMAodel.m) - ARIMA model that finds the best fitting model from the first 100 days of data provided.
 
 Folders 📁
 - [data/](/data/) (Directory of all Data Files required for Assigment)
