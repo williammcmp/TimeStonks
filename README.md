@@ -15,7 +15,7 @@ All components of the assignment are completed and fully ready for use.
 This MATLAB project is designed to analyze and visualize time series data. It includes various functions and scripts for data import, statistical analysis, and visualization of different aspects of stochastic processes 📈📉
 
 <p align="center">
-  <img src="figures/2008 Gold forecasted.fig"  style="max-height:400px;"/> 
+  <img src="figures/gold-forecasted.jpg"  style="max-height:400px;"/> 
 </p>
 
 ## Prerequisites
