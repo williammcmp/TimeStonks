@@ -7,9 +7,10 @@ function ARIMAModel (data, figureTitle)
 
     % use the best model for forceasting and more...
     mdl = bestModel;
+    disp(mdl)
     fit = estimate(mdl, data100);
     res=infer(fit,data100);
-    
+    forecastedValues = forecast(fit, 20, data100); % Calcualting forecasted values
 
     fig = figure;
     arimaType = "ARIAM (" + p + ", " + d + ", " + q + ")";
@@ -25,15 +26,15 @@ function ARIMAModel (data, figureTitle)
     h1 = plot(data100, '-');
     hold on
     h2 = plot(data100 - res, '-');
-    legend([h1 h2],figureTitle + " - first 100 Days", arimaType + ' - Fitted values');
-    title(['Fitted ' + arimaType + ' model to ' + figureTitle])
+    h3 = plot([101:100+length(forecastedValues)], forecastedValues)
+
+    legend([h1 h2, h3],figureTitle + " - first 100 Days", arimaType + ' - Fitted values', arimaType + ' - Forecasted values');
+    title(['Fitted and forecast ' + arimaType + ' model to ' + figureTitle])
 
     subplot(3,1,3)
     % Comparing forecasted values
     h1 = plot(data(101:121), '-'); % Known futuer values
     hold on 
-
-    forecastedValues = forecast(fit, 20) + mean(data); % Calcualting forecasted values
     h2 = plot(forecastedValues, '-');
     legend([h1 h2],figureTitle + " - Days 101 - 121", arimaType + ' - Forecasted values');
     title(['Forcecasting ' + arimaType + ' model 20 days ahead.'])
@@ -52,7 +53,7 @@ function ARIMAModel (data, figureTitle)
     disp("Validation of the " + arimaType + " model to " + figureTitle)
 
     % Ljung-Box test
-    [h,p] = lbqtest(res, 'Lags', m, 'DOF', m-(p+d) ); % 2 parameter was estimated (mu, a)
+    [h,p] = lbqtest(res, 'Lags', m, 'DOF', m-(p+d) );
 
     if p > 0.05
         disp("Ljung-Box test p-value = " + p + " - ACF of the residuals is NOT significantly different from the ACF of a white noise process")
@@ -78,7 +79,20 @@ function ARIMAModel (data, figureTitle)
         disp("Two Sided test p-value = " + p + " - residual mean is significantly different from zero")
     end 
 
-
+    % plotting the ACF and histogram of the residuals (not needed for assignment)
+    m=floor(log(100));
+    fig = figure;
+    set(fig, 'Name', "Histogram and ACF of residuals from Mean Forecast of " + figureTitle);
+    subplot(2,1,1)
+    autocorr(res,m)
+    subplot(2,1,2)
+    h = histogram(res);
+    hold on
+    h.Normalization = 'pdf';
+    xx=-5:0.01:5;
+    yy=pdf('Normal',xx,mean(res),std(res));
+    plot(xx,yy)
+    title('Histogram of residuals')
 
 end
 
@@ -99,7 +113,7 @@ function [bestModel, p, d, q] = findBestModel(data)
                 % the try is here to catch any errors in the ARIMA modeling process
                 % doc state that it can be unstable under certain conditions.
                 try
-                    if p+d < 4 % The number due to lags avaliable
+                    if p+d < 4 % The number due to lags avaliable from the data set
                         % makes the ARIMA(p,d,q) model
                         mdl = arima('Constant', NaN, 'ARLags',[(1:p)],'MALags',[(1:q)],'D',d);
                         
