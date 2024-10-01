@@ -1,5 +1,7 @@
 # TimeStonks ⌛💰
 
+All code found in this repo (unless otherwise stated) is developed and written in completion by [William McMahon-Puce](https://www.linkedin.com/in/william-mcmahon-puce-b9b3a9210/) over the course of 2023 S2 at while studying at Swinburne University of Technology. Use of GPT was used for the generation of docstrings and documentation.
+
 ---
 ## NOTE 
 **The specific data files for each person in MTH20016 (S2 2023) has also been included, Simply change you file number in [main.m](/main.m)**
